@@ -1,8 +1,8 @@
-from pymongo import Connection
+from pymongo import MongoClient
 
 from .config import DBINFO
 
-db = Connection(**DBINFO).vinergy
+db = MongoClient(**DBINFO).vinergy
 codebase = db.codebase
 codebase.ensure_index('count')
 
